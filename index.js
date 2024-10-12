@@ -18,20 +18,7 @@ const socketIo = require('socket.io');
 const cron = require('node-cron');
 const axios = require('axios');
 
-// Your server URL
-const serverUrl = 'https://octserver007.onrender.com/';
-
-// Define the cron job
-cron.schedule('*/5 * * * *', async () => {
-    try {
-        const response = await axios.get(serverUrl);
-        console.log(`Pinged server at ${new Date().toISOString()}: ${response.status}`);
-    } catch (error) {
-        console.error(`Error pinging server at ${new Date().toISOString()}:`, error.message);
-    }
-});
-
-console.log('Cron job scheduled to ping the server every 5 minutes.');
+// Your server
 
 // Create the first Express app
 const app = express();
